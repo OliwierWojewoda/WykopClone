@@ -1,0 +1,85 @@
+﻿@model IEnumerable<WykopClone.Models.Thread>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@foreach (var item in Model)
+{
+    <article>
+        <div class="votes">
+            <p class="votesnumber">@Html.DisplayFor(modelItem => item.Votes)</p>
+            <p class="upvote">Wykop</p>
+        </div>
+        <div class="info">
+            <h2 class="title">@Html.DisplayFor(modelItem => item.Title)</h2>
+            <p class="description">
+                @Html.DisplayFor(modelItem => item.Description)
+            <p class="author">Nantai z youtube.com opublikowany: 5 godz. i 20 min. temu</p>
+            <p class="author">#@Html.DisplayFor(modelItem => item.Category)</p>
+        </div>
+        <div class="pic">
+        </div>
+    </article>
+}
+<style>
+    body {
+        margin: 20px;
+        color: black;
+    }
+
+    .description {
+        font-size: 15px;
+        color: #DADADA;
+        padding: 2px
+    }
+
+    article {
+        display: flex;
+        background-color: #202525;
+        color: #FFFFFF;
+        border-radius: 5px;
+        margin: 3px;
+    }
+
+    .votes {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        height: 2.5rem;
+        width: 10rem;
+    }
+
+    .info {
+        margin-left: 1rem;
+    }
+
+    .votesnumber {
+        border: solid white 4px;
+        font-size: 1.5rem;
+        padding: 3px;
+        border-radius: 10px;
+        text-align: center;
+        color: #DE6F1E;
+    }
+
+    .upvote {
+        text-align: center;
+        background-color: #E6E5E5;
+        color: black;
+        border-radius: 5px;
+        font-family: "Lucida Console", "Courier New", monospace;
+        padding: 3px
+    }
+
+    .author {
+        color: grey;
+        padding: 2px
+    }
+
+    .title {
+        padding: 2px
+    }
+</style>

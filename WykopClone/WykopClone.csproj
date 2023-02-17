@@ -17,4 +17,12 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\create.png" />
+  </ItemGroup>
+
 </Project>

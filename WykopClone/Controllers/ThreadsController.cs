@@ -54,15 +54,18 @@ namespace WykopClone.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Votes,Category")] Models.Thread thread)
+        public async Task<IActionResult> Create(Models.Thread newthread)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(thread);
+                var thread = new Models.Thread()
+                {
+                    Description = newthread.Description,
+                    Title = newthread.Title,
+                    Votes = newthread.Votes,
+                    Category = newthread.Category
+                };
+                await _context.Threads.AddAsync(thread);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(thread);
+                return RedirectToAction("Index");
         }
 
         // GET: Threads/Edit/5
@@ -157,5 +160,48 @@ namespace WykopClone.Controllers
         {
           return _context.Threads.Any(e => e.Id == id);
         }
+
+        //Categories threads
+        public async Task<IActionResult> Other()
+        {
+            return View(await _context.Threads.Where(x => x.Category == Models.Thread.CategoryType.Inna).ToListAsync());
+        }     
+        public async Task<IActionResult> Info()
+        {
+            return View(await _context.Threads.Where(x => x.Category == Models.Thread.CategoryType.Informacje).ToListAsync());
+        }
+        public async Task<IActionResult> Entertainment()
+        {
+            return View(await _context.Threads.Where(x => x.Category == Models.Thread.CategoryType.Rozrywka).ToListAsync());
+        }
+        public async Task<IActionResult> Sport()
+        {
+            return View(await _context.Threads.Where(x => x.Category == Models.Thread.CategoryType.Sport).ToListAsync());
+        }
+        public async Task<IActionResult> Politics()
+        {
+            return View(await _context.Threads.Where(x => x.Category == Models.Thread.CategoryType.Polityka).ToListAsync());
+        }
+        public async Task<IActionResult> Travels()
+        {
+            return View(await _context.Threads.Where(x => x.Category == Models.Thread.CategoryType.Podróże).ToListAsync());
+        }
+        public async Task<IActionResult> Technology()
+        {
+            return View(await _context.Threads.Where(x => x.Category == Models.Thread.CategoryType.Technologia).ToListAsync());
+        }
+        public async Task<IActionResult> Economy()
+        {
+            return View(await _context.Threads.Where(x => x.Category == Models.Thread.CategoryType.Gospodarka).ToListAsync());
+        }
+        public async Task<IActionResult> Motorization()
+        {
+            return View(await _context.Threads.Where(x => x.Category == Models.Thread.CategoryType.Motoryzacja).ToListAsync());
+        }
+        public async Task<IActionResult> Facts()
+        {
+            return View(await _context.Threads.Where(x=>x.Category== Models.Thread.CategoryType.Ciekawostki).ToListAsync());
+        }
+
     }
 }

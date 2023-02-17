@@ -11,12 +11,12 @@ namespace WykopClone.Models
         public int Votes { get; set; }
         //public List<User> VotesList { get; set; }
         //public User Author { get; set; }
-        public CategoryType Category { get; set; } = Thread.CategoryType.Wszystko;
+        public CategoryType Category { get; set; } = Thread.CategoryType.Inna;
         public List<Comment> Comments { get; set; }
 
         public enum CategoryType
         {
-            Wszystko,Ciekawostki,Informacje,Rozrywka
+            Inna,Ciekawostki,Informacje,Rozrywka
             ,Sport,Motoryzacja,Technologia,
             Gospodarka,Podróże,Polityka
         }
