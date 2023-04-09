@@ -7,8 +7,9 @@ namespace WykopClone.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public string Link { get; set; }
         //public int Photo { get; set; }
-        public int Votes { get; set; }
+        public int Votes { get; set; } = 0;
         //public List<User> VotesList { get; set; }
         //public User Author { get; set; }
         public CategoryType Category { get; set; } = Thread.CategoryType.Inna;

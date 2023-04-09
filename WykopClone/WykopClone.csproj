@@ -18,11 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Home\" />
+    <None Include="wwwroot\Images\create.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Images\create.png" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

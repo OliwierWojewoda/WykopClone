@@ -54,13 +54,13 @@ namespace WykopClone.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Models.Thread newthread)
+        public async Task<IActionResult> Create(Models.AddThread newthread)
         {
                 var thread = new Models.Thread()
                 {
                     Description = newthread.Description,
                     Title = newthread.Title,
-                    Votes = newthread.Votes,
+                    Link = newthread.Link,
                     Category = newthread.Category
                 };
                 await _context.Threads.AddAsync(thread);

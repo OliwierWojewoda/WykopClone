@@ -12,8 +12,8 @@ using WykopClone.Data;
 namespace WykopClone.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230215155326_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230217173542_Add Link To Thread")]
+    partial class AddLinkToThread
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -268,6 +268,10 @@ namespace WykopClone.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Link")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
