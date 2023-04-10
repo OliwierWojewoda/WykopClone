@@ -4,12 +4,10 @@
 a {
   color: #0077cc;
 }
-
-
 .fix-left-panel {
     display: block;
     position: fixed;
-    top: 5em;
+    top: 3em;
     left: 5px;
     padding: 10px;
     min-height: 100%;
@@ -17,10 +15,7 @@ a {
     z-index: 9999;
     background-color: #2E2E2E;
 }
-.navitem{
-    padding:50px;
-}
-li{
+.nav-item-left{
     margin-bottom:10px;
 }
 .container{
