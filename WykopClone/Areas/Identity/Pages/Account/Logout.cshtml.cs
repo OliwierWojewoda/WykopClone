@@ -29,13 +29,15 @@ namespace WykopClone.Areas.Identity.Pages.Account
             _logger.LogInformation("User logged out.");
             if (returnUrl != null)
             {
+                await Console.Out.WriteLineAsync("if");
                 return LocalRedirect(returnUrl);
             }
             else
             {
+                await Console.Out.WriteLineAsync("else");
                 // This needs to be a redirect so that the browser performs a new
                 // request and the identity for the user gets updated.
-                return RedirectToPage();
+                return RedirectToPage("/");
             }
         }
     }
