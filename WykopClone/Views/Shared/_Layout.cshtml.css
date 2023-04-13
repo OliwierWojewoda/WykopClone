@@ -8,7 +8,6 @@ a {
     display: block;
     position: fixed;
     top: 4em;
-    left: 5px;
     padding: 10px;
     min-height: 100%;
     overflow: hidden;
@@ -19,7 +18,8 @@ a {
     margin-bottom:10px;
 }
 .container{
-    margin-top:4rem;
+    margin:4rem;
+    margin-left:10rem;
 }
 .hover-nav:hover {
     background-color:gray;
